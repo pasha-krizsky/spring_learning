@@ -1,0 +1,24 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>Start</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    </head>
+    <body>
+        <h2>The Simplest Calculator In The World!</h2>
+
+        <form action="#" th:action="@{/}" th:object="${calculator}" method="post">
+            <p>First value:  <input type="text" name="firstValue"  id="firstValue"/></p>
+            <p>Second value: <input type="text" name="secondValue" id="secondValue"/></p>
+            <p>Operation:
+                <select id="operation" class="form-control" th:field="*{operation}" >
+                    <option value="ADD">ADD</option>
+                    <option value="SUBTRACT" >SUBTRACT</option>
+                    <option value="MULTIPLY">MULTIPLY</option>
+                    <option value="DIVIDE">DIVIDE</option>
+                </select>
+            </p>
+            <p><input type="submit" value="Calculate"/> <input type="reset" value="Reset"/></p>
+        </form>
+    </body>
+</html>
